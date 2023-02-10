@@ -1,0 +1,29 @@
+package Automation;
+
+import org.openqa.selenium.WebElement;
+
+public class Practice {
+
+	public static void main(String[] args) {
+		GenaricLayer obj=new GenaricLayer();
+		obj.takeExtentTestReport( "tc001");
+		obj.lanchBrowser( "chrome", "chromeBrowser");
+		obj.openUrl("http://localhost:8888");
+		obj.enterTextboxValue("xpath", "//input[@name='user_name']", "user name", "admin");
+		obj.getInnerText("xpath", "//td[text()='User Name']","user");
+		obj.validateText("xpath", "//td[text()='User Name']", "user name", "user");
+		
+		obj.enterTextboxValue("xpath", "//input[@name='user_password']", "user password", "admin");
+	    obj.getInnerText("xpath", "//td[text()='Password']", "PASWORD");
+		
+		obj.getSelectValue("xpath", "//select[@name='login_theme']", "login_theme", "alphagrey");
+		obj.getAttributeValue("xpath", "//input[@name='Login']", "loginFuction","accesskey");
+		obj.click("xpath", "//input[@name='Login']", "login");
+		
+		obj.click("xpath", "//a[text()='Marketing']","Marketing");
+		obj.actionMouseOver("xpath", "//a[text()='Marketing']","Marketing");
+		obj.flush();
+	}
+
+}
+ 

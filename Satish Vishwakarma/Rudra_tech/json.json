@@ -1,0 +1,27 @@
+{
+	"Name"     : "Satish",
+	"Mid_Name" : "Kumar",
+	"Last_name": "Vishwakarma",
+	"Age"      : 30,
+	"Class"    : "OBC ",
+ 
+	"Address":[
+		"Village  :Dundawa Dharam Pur",
+		"PinCode  :221406",
+		"Post     :MOndh",
+		"Distic   :Bhadohi",
+		"State    :UP",
+		"Country  :India"
+	],
+
+	"Education_Details": [
+		"High_School:2011",
+		"Intermediate:2013",
+		"Under_Greduation:2017",
+		[
+			"High_School:70% ",
+			"Intermediate:66%",
+			"Under_Greduation:70%"
+		]
+	]
+}

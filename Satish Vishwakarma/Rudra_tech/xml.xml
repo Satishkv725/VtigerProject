@@ -1,0 +1,52 @@
+<catlog>
+	student Details
+	<name>Satish kumar vishwakarma</name>
+	<gender>Male</gender>
+	<age>24</age>
+	<mobile_number>9616330099</mobile_number>
+	<class>OBC</class>
+	<religion>hindu</religion>
+	<nationality>indian</nationality>
+	<address>
+		student Address Details
+		<vill.>Dundwa Dharam pur</vill.>
+		<post>Mondh</post>
+		<district>Bhadohi</district>
+		<pincode>221406</pincode>
+		<state>UP</state>
+		<country>India</country>
+	</address>
+	<education >
+		student education details
+		<highSchool>
+			<year>2011</year>
+			<result>pass</result>
+			<mark>450/600</mark>
+			<percent>75%</percent>
+		</highSchool>
+		<intermediate>
+			<year>2013</year>
+			<result>pass</result>
+			<mark>350/500</mark>
+			<percent>70%</percent>
+		</intermediate>
+		<graduation>
+			<year>2017</year>
+			<result>pass</result>
+			<mark>700/1000</mark>
+			<percent>70%</percent>
+		</graduation>
+		
+	</education >
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</catlog>

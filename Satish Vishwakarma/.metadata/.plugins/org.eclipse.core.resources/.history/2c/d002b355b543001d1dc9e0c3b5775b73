@@ -1,0 +1,10 @@
+package Palindrome;
+
+public class Palindrome_Class_Practice {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

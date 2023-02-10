@@ -1,0 +1,97 @@
+package Automation;
+
+import com.aventstack.extentreports.ExtentReports;
+
+public class TesCaseLayer extends GenaricLayer  {
+	static GenaricLayer obj1=new GenaricLayer();
+	
+	public static void main(String[] args) {
+		ExtentReports report = obj1.takeExtentTestReport();
+		obj1.createTest("TC000");
+
+		obj1.lanchBrowser( "chrome", "chromeBrowser");
+		obj1.openUrl("http://localhost:8888");
+		obj1.createTest("TC001");
+		
+		verifyUserTextboxSize();
+		
+		obj1.createTest("tc002--verifyUserTextboxLocation");
+		verifyUserTextboxLocation();
+		
+		obj1.createTest("tc003--verifyCreateNewLead");
+		verifyCreateNewLead();
+		 obj1.flush();
+	}
+	
+	public static void verifyUserTextboxSize() {
+	
+		
+//		obj1.createTest("tc001--verifyUserTextboxSize");
+//		obj1.lanchBrowser( "chrome", "chromeBrowser");
+//		obj1.openUrl("http://localhost:8888");
+		obj1.validateGetSize("xpath", "//input[@name='user_name']", "user name", 140, 22);
+		obj1.validateGetSize("xpath", "//input[@name='user_password']", "user password", 141, 23);
+		obj1.validateGetSize("xpath", "//input[@name='Login']", "Login Button", 138, 40);
+		//obj1.flush();
+	}
+	
+	public static void verifyUserTextboxLocation() {
+		
+//		obj1.createTest("tc002--verifyUserTextboxLocation");
+//		obj1.lanchBrowser( "chrome", "chromeBrowser");
+//		obj1.openUrl("http://localhost:8888");
+		obj1.validateGetLocation("xpath", "//input[@name='user_name']", "user name", 632, 230);
+		obj1.validateGetLocation("xpath", "//input[@name='user_password']", "user password", 632,262);
+		obj1.validateGetLocation("xpath", "//input[@name='Login']", "Login Button", 632, 350);
+	//	obj2.flush();
+	}
+	
+		public  static void verifyCreateNewLead() {
+		
+//		obj1.createTest("tc003--verifyCreateNewLead");
+//		obj1.lanchBrowser( "chrome", "chromeBrowser");
+//		obj1.openUrl("http://localhost:8888");
+		obj1.enterTextboxValue("xpath", "//input[@name='user_name']", "user name", "admin");
+	
+		obj1.validateText("xpath", "//td[text()='User Name']", "user name", "user");
+		
+		obj1.enterTextboxValue("xpath", "//input[@name='user_password']", "user password", "admin");
+	    obj1.getInnerText("xpath", "//td[text()='Password']", "PASWORD");
+		
+		obj1.getSelectValue("xpath", "//select[@name='login_theme']", "login_theme", "alphagrey");
+		obj1.getAttributeValue("xpath", "//input[@name='Login']", "loginFuction","accesskey");
+		obj1.click("xpath", "//input[@name='Login']", "login");
+		//Marketing
+		obj1.click("xpath", "//a[text()='Marketing']","Marketing");
+		//obj.actionMouseOver("xpath", "//a[text()='Marketing']","Marketing");
+		
+		//Leads
+		obj1.click("xpath", "//table[@class='level2Bg']//a[text()='Leads']", "Leads");
+		//Create Lead
+		obj1.click("xpath","//img[@title='Create Lead...']", "CreateLead");
+		//select dropdown title name
+		obj1.getSelectValue("xpath","//select[@name='salutationtype']", "titleName", "Mr.");
+		obj1.enterTextboxValue("xpath","//input[@name='firstname']","EnterFirstName","Satish");
+		obj1.enterTextboxValue("xpath","//input[@name='lastname']","EnterLastName","Vishwakarma");
+		obj1.enterTextboxValue("xpath","//input[@name='company']","CompanyName","RudraInterPricess");
+		obj1.enterTextboxValue("xpath","//input[@name='designation']","CompanyName","pvt.ltd");
+		obj1.getSelectValue("xpath","//select[@name='leadsource']", "leadsource", "Public Relations");
+		obj1.getSelectValue("xpath","//select[@name='leadstatus']", "leadstatus", "Hot");
+		
+		obj1.enterTextboxValue("xpath","//input[@id='phone']","PhoneNo","05414274328");
+		obj1.enterTextboxValue("xpath","//input[@id='mobile']","MobileNo","9616330099");
+		obj1.enterTextboxValue("xpath","//input[@id='fax']","FaxNo","221406");
+		obj1.enterTextboxValue("xpath","//input[@id='email']","Email_Id","satishkv725@gmail.com");
+		obj1.enterTextboxValue("xpath","//textarea[@name='lane']","Street","Mondh Bhadohi Road");
+		obj1.enterTextboxValue("xpath","//input[@id='code']","Postal Code","221406");
+		obj1.enterTextboxValue("xpath","//input[@id='country']","Country","India");
+		obj1.enterTextboxValue("xpath","//input[@id='pobox']","PostBox","Mondh");
+		obj1.enterTextboxValue("xpath","//input[@id='city']","City","Bhadohi");
+		obj1.enterTextboxValue("xpath","//input[@id='state']","State","UttarPradesh");
+		obj1.enterTextboxValue("xpath","//textarea[@name='description']","Description","Hi i am satish kumar vishwakarma this is the new thing");
+		
+ 
+		//obj.flush();
+	}
+	
+}

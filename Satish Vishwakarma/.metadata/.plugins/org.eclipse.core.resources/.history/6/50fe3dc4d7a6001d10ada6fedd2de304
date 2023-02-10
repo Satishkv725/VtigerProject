@@ -1,0 +1,57 @@
+package Automation;
+
+
+public class TesCaseLayer  {
+
+	public static void main(String[] args) {
+		TesCaseLayer tc=new TesCaseLayer();
+		tc.verifyLead();
+		
+		
+	}
+		public void verifyLead() {
+		GenaricLayer obj=new GenaricLayer();
+		obj.takeExtentTestReport( "tc001");
+		obj.lanchBrowser( "chrome", "chromeBrowser");
+		obj.openUrl("http://localhost:8888");
+		obj.enterTextboxValue("xpath", "//input[@name='user_name']", "user name", "admin");
+		obj.getInnerText("xpath", "//td[text()='User Name']","user");
+		obj.validateText("xpath", "//td[text()='User Name']", "user name", "user");
+		
+		obj.enterTextboxValue("xpath", "//input[@name='user_password']", "user password", "admin");
+	    obj.getInnerText("xpath", "//td[text()='Password']", "PASWORD");
+		
+		obj.getSelectValue("xpath", "//select[@name='login_theme']", "login_theme", "alphagrey");
+		obj.getAttributeValue("xpath", "//input[@name='Login']", "loginFuction","accesskey");
+		obj.click("xpath", "//input[@name='Login']", "login");
+		//Marketing
+		obj.click("xpath", "//a[text()='Marketing']","Marketing");
+		//obj.actionMouseOver("xpath", "//a[text()='Marketing']","Marketing");
+		
+		//Leads
+		obj.click("xpath", "//table[@class='level2Bg']//a[text()='Leads']", "Leads");
+		//Create Lead
+		obj.click("xpath","//img[@title='Create Lead...']", "CreateLead");
+		//select dropdown title name
+		obj.getSelectValue("xpath","//select[@name='salutationtype']", "titleName", "Mr.");
+		obj.enterTextboxValue("xpath","//input[@name='firstname']","EnterFirstName","Satish");
+		obj.enterTextboxValue("xpath","//input[@name='lastname']","EnterLastName","Vishwakarma");
+		obj.enterTextboxValue("xpath","//input[@name='company']","CompanyName","RudraInterPricess");
+		obj.enterTextboxValue("xpath","//input[@name='designation']","CompanyName","pvt.ltd");
+		obj.getSelectValue("xpath","//select[@name='leadsource']", "leadsource", "Public Relations");
+		obj.getSelectValue("xpath","//select[@name='leadstatus']", "leadstatus", "Hot");
+		
+		obj.enterTextboxValue("xpath","//input[@id='phone']","PhoneNo","05414274328");
+		obj.enterTextboxValue("xpath","//input[@id='mobile']","MobileNo","9616330099");
+		obj.enterTextboxValue("xpath","//input[@id='fax']","FaxNo","221406");
+		obj.enterTextboxValue("xpath","//input[@id='email']","Email_Id","satishkv725@gmail.com");
+		obj.enterTextboxValue("xpath","//textarea[@name='lane']","Street","Mondh Bhadohi Road");
+		obj.enterTextboxValue("xpath","//input[@id='code']","Postal Code","221406");
+		obj.enterTextboxValue("xpath","","","");
+		obj.enterTextboxValue("xpath","","","");
+		obj.enterTextboxValue("xpath","","","");
+ 
+		obj.flush();
+	}
+	
+}

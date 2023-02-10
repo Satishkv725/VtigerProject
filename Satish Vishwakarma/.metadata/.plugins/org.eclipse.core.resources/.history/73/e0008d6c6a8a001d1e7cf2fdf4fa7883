@@ -1,0 +1,11 @@
+package Selenium;
+
+public class GoDaddy {
+
+	public static void main(String[] args) {
+		
+	}
+  void test1() {
+	  System.setProperty("webdriver.chrome.driver", "/chromedriver.exe");
+  }
+}

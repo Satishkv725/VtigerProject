@@ -1,0 +1,83 @@
+package Automation;
+
+
+public class TesCaseLayer  {
+
+	public static void main(String[] args) {
+		TesCaseLayer tc=new TesCaseLayer();
+		//tc.verifyCreateNewLead();
+		//tc.verifyUserTextboxSize();
+		tc.verifyUserTextboxLocation();
+		
+	}
+	public void verifyUserTextboxSize() {
+		GenaricLayer obj1=new GenaricLayer();
+		obj1.takeExtentTestReport( "tc001--verifyUserTextboxSize");
+		obj1.lanchBrowser( "chrome", "chromeBrowser");
+		obj1.openUrl("http://localhost:8888");
+		obj1.validateGetSize("xpath", "//input[@name='user_name']", "user name", 140, 22);
+		obj1.validateGetSize("xpath", "//input[@name='user_password']", "user password", 141, 23);
+		obj1.validateGetSize("xpath", "//input[@name='Login']", "Login Button", 138, 40);
+		obj1.flush();
+	}
+	
+	public void verifyUserTextboxLocation() {
+		GenaricLayer obj2=new GenaricLayer();
+		obj2.takeExtentTestReport( "tc002--verifyUserTextboxLocation");
+		obj2.lanchBrowser( "chrome", "chromeBrowser");
+		obj2.openUrl("http://localhost:8888");
+		obj2.validateGetLocation("xpath", "//input[@name='user_name']", "user name", 632, 230);
+		obj2.validateGetLocation("xpath", "//input[@name='user_password']", "user password", 632,262);
+		obj2.validateGetLocation("xpath", "//input[@name='Login']", "Login Button", 632, 350);
+		obj2.flush();
+	}
+	
+		public void verifyCreateNewLead() {
+		GenaricLayer obj=new GenaricLayer();
+		obj.takeExtentTestReport( "tc003--verifyCreateNewLead");
+		obj.lanchBrowser( "chrome", "chromeBrowser");
+		obj.openUrl("http://localhost:8888");
+		obj.enterTextboxValue("xpath", "//input[@name='user_name']", "user name", "admin");
+	
+		obj.validateText("xpath", "//td[text()='User Name']", "user name", "user");
+		
+		obj.enterTextboxValue("xpath", "//input[@name='user_password']", "user password", "admin");
+	    obj.getInnerText("xpath", "//td[text()='Password']", "PASWORD");
+		
+		obj.getSelectValue("xpath", "//select[@name='login_theme']", "login_theme", "alphagrey");
+		obj.getAttributeValue("xpath", "//input[@name='Login']", "loginFuction","accesskey");
+		obj.click("xpath", "//input[@name='Login']", "login");
+		//Marketing
+		obj.click("xpath", "//a[text()='Marketing']","Marketing");
+		//obj.actionMouseOver("xpath", "//a[text()='Marketing']","Marketing");
+		
+		//Leads
+		obj.click("xpath", "//table[@class='level2Bg']//a[text()='Leads']", "Leads");
+		//Create Lead
+		obj.click("xpath","//img[@title='Create Lead...']", "CreateLead");
+		//select dropdown title name
+		obj.getSelectValue("xpath","//select[@name='salutationtype']", "titleName", "Mr.");
+		obj.enterTextboxValue("xpath","//input[@name='firstname']","EnterFirstName","Satish");
+		obj.enterTextboxValue("xpath","//input[@name='lastname']","EnterLastName","Vishwakarma");
+		obj.enterTextboxValue("xpath","//input[@name='company']","CompanyName","RudraInterPricess");
+		obj.enterTextboxValue("xpath","//input[@name='designation']","CompanyName","pvt.ltd");
+		obj.getSelectValue("xpath","//select[@name='leadsource']", "leadsource", "Public Relations");
+		obj.getSelectValue("xpath","//select[@name='leadstatus']", "leadstatus", "Hot");
+		
+		obj.enterTextboxValue("xpath","//input[@id='phone']","PhoneNo","05414274328");
+		obj.enterTextboxValue("xpath","//input[@id='mobile']","MobileNo","9616330099");
+		obj.enterTextboxValue("xpath","//input[@id='fax']","FaxNo","221406");
+		obj.enterTextboxValue("xpath","//input[@id='email']","Email_Id","satishkv725@gmail.com");
+		obj.enterTextboxValue("xpath","//textarea[@name='lane']","Street","Mondh Bhadohi Road");
+		obj.enterTextboxValue("xpath","//input[@id='code']","Postal Code","221406");
+		obj.enterTextboxValue("xpath","//input[@id='country']","Country","India");
+		obj.enterTextboxValue("xpath","//input[@id='pobox']","PostBox","Mondh");
+		obj.enterTextboxValue("xpath","//input[@id='city']","City","Bhadohi");
+		obj.enterTextboxValue("xpath","//input[@id='state']","State","UttarPradesh");
+		obj.enterTextboxValue("xpath","//textarea[@name='description']","Description","Hi i am satish kumar vishwakarma this is the new thing");
+		
+ 
+		obj.flush();
+	}
+	
+}
